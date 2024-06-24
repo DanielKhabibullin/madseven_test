@@ -6,7 +6,6 @@
   --size: 352px;
   --mob-size: 375px;
 }
-
 @font-face {
   font-display: swap;
   font-family: 'Roboto';
@@ -36,10 +35,6 @@ body {
 h1, h2, h3, h4, h5, h6, p {
 	margin: 0;
   font-weight: 400;
-}
-.container {
-	max-width: 1097px;
-	margin: 0 auto;
 }
 .hide {
 	display: none;
@@ -73,15 +68,9 @@ button {
 	width: 1px;
 	overflow: hidden;
 }
-.wrapper {
+/* .wrapper {
   position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-/* @media (max-width: 1440px) {
-  .container {
-   padding: 0 calc(20px + (40 - 20) * ((100vw - 320px) / (1440 - 320)));
-  }
 } */
