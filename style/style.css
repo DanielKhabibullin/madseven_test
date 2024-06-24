@@ -1,0 +1,111 @@
+
+.block_1 {
+  background: var(--white);
+  display: flex;
+}
+.cards__list {
+  margin: 0 auto;
+  display: grid;
+  grid-template: repeat(3, var(--size)) / repeat(3, var(--size));
+  gap: 20px;
+  grid-template-areas:
+  "one . six"
+  ". three five"
+  "two four ."
+}
+.cards__item {
+  display: flex;
+  max-width: var(--size);
+  width: 100%;
+  height: var(--size);
+  justify-content: center;
+  align-items: center;
+
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--white);
+  text-align: center;
+
+  background: var(--red);
+  /* transition: background-color 0.3s cubic-bezier(.17,.67,.83,.67); */
+  animation: changeColor 1.5s infinite;
+  animation-timing-function: cubic-bezier(.17,.67,.83,.67);
+  /* animation-timing-function: ease-in-out; */
+
+}
+.cards__item_1 {
+  grid-area: one;
+  animation-delay: 0s;
+}
+.cards__item_2 {
+  grid-area: two;
+  animation-delay: -0.3s;
+}
+.cards__item_3 {
+  grid-area: three;
+  animation-delay: -0.6s;
+}
+.cards__item_4 {
+  grid-area: four;
+  animation-delay: -0.9s;
+}
+.cards__item_5 {
+  grid-area: five;
+  animation-delay: -1.2s;
+}
+.cards__item_6 {
+  grid-area: six;
+  animation-delay: -1.5s;
+}
+@keyframes changeColor {
+  0% {
+    background-color: var(--red);
+  }
+  33% {
+    background-color: var(--blue);
+  }
+  66% {
+    background-color: var(--green);
+  }
+  100% {
+    background-color: var(--red);
+  }
+}
+@media (max-width: 1096px) {
+  .cards__list {
+    grid-template-columns: repeat(2, var(--size));
+    grid-template-rows: repeat(auto, var(--size));
+    grid-template-areas: none;
+  }
+  .cards__item_1 {
+    grid-area: unset;
+  }
+  .cards__item_2 {
+    grid-area: unset;
+  }
+  .cards__item_3 {
+    grid-area: unset;
+  }
+  .cards__item_4 {
+    grid-area: unset;
+  }
+  .cards__item_5 {
+    grid-area: unset;
+  }
+  .cards__item_6 {
+    grid-area: unset;
+  }
+}
+
+@media (max-width: 723px) {
+  .cards__list {
+    grid-template-columns: repeat(1, var(--mob-size));
+    grid-template-rows: repeat(auto, var(--mob-size));
+    grid-template-areas: none;
+    gap: 22px;
+  }
+  .cards__item {
+    max-width: var(--mob-size);
+    height: var(--mob-size);
+  }
+}
